@@ -12,7 +12,7 @@ package gt.edu.umg.pruebamaven;
 public class Hello {
     
     public static void main(String[] args){
-        Logger.log("Hello World");
+        System.out.println("Hello World");
     }
     
 }
