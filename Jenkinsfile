@@ -12,10 +12,13 @@ pipeline {
 		}
 		stage('Analisis') {
 			steps {
-				escaner = tool 'misonar'
+				script {
+					escaner = tool 'misonar'
+				}
+				withSonarQubeEnv('misonar') { 
+					sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=pruebajenkinssonar -Dsonar.projectVersion=1.0 -Dsonar.sources=./src" }
 			}
-			withSonarQubeEnv('misonar') { 
-				sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=pruebajenkinssonar -Dsonar.projectVersion=1.0 -Dsonar.sources=./src" }
+			
 		}
 	}
 }
