@@ -15,10 +15,7 @@ pipeline {
 				escaner = tool 'misonar'
 			}
 			withSonarQubeEnv('misonar') { 
-				sh "${scannerHome}/bin/sonar-scanner \ 
-				-Dsonar.projectKey=pruebajenkinssonar \ 
-				-Dsonar.projectVersion=1.0 \ 
-				-Dsonar.sources=./src" }
+				sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=pruebajenkinssonar -Dsonar.projectVersion=1.0 -Dsonar.sources=./src" }
 		}
 	}
 }
