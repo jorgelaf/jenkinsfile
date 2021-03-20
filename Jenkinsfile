@@ -16,7 +16,7 @@ pipeline {
 					scannerHome = tool 'miescaner'
 				}
 				withSonarQubeEnv('misonar') { 
-					sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=pruebajenkinssonar -Dsonar.projectVersion=1.0 -Dsonar.sources=./ -Dsonar.java.binaries=./target/classes" }
+					sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=pruebajenkinssonar -Dsonar.projectVersion=1.0 -Dsonar.sources=./ -Dsonar.java.binaries=./target/classes -Dsonar.login=admin -Dsonar.password=admin1" }
 			}
 			
 		}
